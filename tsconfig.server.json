@@ -1,8 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "CommonJS",
-    "outDir": "build/backend",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "build/server",
     "noEmit": false
   },
   "include": ["app/server/**/*"],
