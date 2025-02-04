@@ -5,13 +5,13 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "build:server": "mkdir -p build/server && tsc --project tsconfig.server.json",
+    "build:server": "tsc --project tsconfig.server.json",
     "dev": "remix vite:dev & npm run dev:server",
     "dev:server": "tsx watch app/server/index.ts",
     "deploy:server": "NODE_ENV=production node build/server/index.js",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "NODE_ENV=production node build/server/index.js",
-    "start:server": "NODE_ENV=production node build/server/index.js",
+    "start:server": "NODE_ENV=production node build/backend/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
