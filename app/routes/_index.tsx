@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -7,7 +8,14 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const loader = async () => {
+  const data = await fetch("http://localhost:3000/api/v1/health");
+  return { data };
+};
+
 export default function Index() {
+  const data = useLoaderData<typeof loader>();
+  console.log(data);
   return (
     <div className="flex h-screen items-center justify-center">
       <div className="flex flex-col items-center gap-16">
