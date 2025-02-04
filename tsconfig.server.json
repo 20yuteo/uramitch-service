@@ -2,11 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "CommonJS",
-    "moduleResolution": "Node",
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "isolatedModules": true
+    "outDir": "build/backend",
+    "noEmit": false
   },
-  "include": ["server/**/*", "app/**/*"],
+  "include": ["app/server/**/*"],
   "exclude": ["node_modules"]
 } 
