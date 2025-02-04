@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "isolatedModules": true
+  },
+  "include": ["server/**/*", "app/**/*"],
+  "exclude": ["node_modules"]
+} 

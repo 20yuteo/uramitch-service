@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "build:server": "tsc --project tsconfig.server.json",
+    "build:server": "tsc --project tsconfig.server.json --outDir build/server",
     "dev": "remix vite:dev & npm run dev:server",
     "dev:server": "tsx watch app/server/index.ts",
     "deploy:server": "NODE_ENV=production node build/server/index.js",
