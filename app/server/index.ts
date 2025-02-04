@@ -17,6 +17,10 @@ const app = new Hono();
 // 静的ファイルの配信
 // app.use("/*", serveStatic({ root: "./build/client" }));
 
+app.get("/", (c) => {
+  return c.text("Hello World");
+});
+
 // ヘルスチェックエンドポイント
 app.get("/api/v1/health", (c) => {
   return c.json({ status: "ok" });
