@@ -3,7 +3,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "node",
-    "outDir": "build/server",
+    "outDir": "build/backend",
     "noEmit": false
   },
   "include": ["app/server/**/*"],
