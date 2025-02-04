@@ -9,8 +9,13 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader = async () => {
-  const data = await fetch("http://localhost:3000/api/v1/health");
-  return { data };
+  try {
+    const data = await fetch("http://localhost:3000/api/v1/health");
+    const res = await data.json();
+    return { data: res };
+  } catch (error) {
+    return { data: { status: "error" } };
+  }
 };
 
 export default function Index() {
