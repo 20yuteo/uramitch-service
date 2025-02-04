@@ -7,7 +7,7 @@
     "build": "remix vite:build",
     "build:server": "tsc --project tsconfig.server.json",
     "dev": "remix vite:dev & npm run dev:server",
-    "dev:server": "NODE_ENV=development node --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' app/server.ts",
+    "dev:server": "tsx watch app/server/index.ts",
     "deploy:server": "NODE_ENV=production node build/server/index.js",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "NODE_ENV=production node build/server/index.js",
@@ -15,6 +15,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@hono/node-server": "^1.13.8",
     "@remix-run/express": "^2.15.3",
     "@remix-run/node": "^2.15.3",
     "@remix-run/react": "^2.15.3",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@remix-run/dev": "^2.15.3",
     "@types/express": "^5.0.0",
+    "@types/node": "^22.13.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
@@ -41,7 +43,8 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.1.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
     "vite": "^5.4.14",
     "vite-tsconfig-paths": "^4.2.1"
   },
