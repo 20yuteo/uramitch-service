@@ -8,9 +8,17 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+const getApiUrl = () => {
+  if (process.env.NODE_ENV === 'development') {
+    return 'http://localhost:3000/api/v1/health';
+  }
+  return '/api/v1/health';
+};
+
 export const loader = async () => {
   try {
-    const data = await fetch("http://localhost:3000/api/v1/health");
+    const apiUrl = getApiUrl();
+    const data = await fetch(apiUrl);
     const res = await data.json();
     return { data: res };
   } catch (error) {
